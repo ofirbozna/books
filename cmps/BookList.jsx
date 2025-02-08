@@ -1,6 +1,6 @@
 import { BookPreview } from "../cmps/BookPreview.jsx"
 
-export function BookList({ books }) {
+export function BookList({ books, onRemoveBook, onSetSelectedBookId }) {
 
     return (
         <section>
@@ -9,8 +9,8 @@ export function BookList({ books }) {
                     <li key={book.id}>
                         <BookPreview book={book}/>
                         <section>
-                            <button>Delete</button>
-                            <button>Details</button>
+                            <button onClick={()=>onRemoveBook(book.id)}>Delete</button>
+                            <button onClick={()=> onSetSelectedBookId(book.id)}>Details</button>
                         </section>
 
                     </li>
