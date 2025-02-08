@@ -1,9 +1,15 @@
 import { bookService } from "../services/book.service.js";
+import { BookList } from '../cmps/BookList.jsx'
 
 const { useState, useEffect } = React
+
 export function BookIndex() {
 
     const [books, setBooks] = useState(null)
+
+    useEffect(() => {
+        loadBooks()
+    }, [])
 
     function loadBooks() {
         bookService.query()
@@ -11,16 +17,12 @@ export function BookIndex() {
                 console.log(books)
                 setBooks(books)
             })
-
     }
-
-    useEffect(() => {
-        loadBooks()
-    }, [])
 
     return (
         <section>
             <h1>Book list</h1>
+            {books && <BookList books={books} />}
         </section>
     )
 }
