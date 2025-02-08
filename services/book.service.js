@@ -15,8 +15,19 @@ export const bookService = {
     getEmptyBook
 }
 
-function query(filteBY = []) {
+function query(filterBy = {}) {
     return storageService.query(BOOK_KEY)
+        .then(books => {
+            if (filterBy.title) {
+                const regExp = new RegExp(filterBy.title, 'i')
+                books = books.filter(book => regExp.test(book.title))
+            }
+            if (filterBy.listPrice) {
+                books = books.filter(book => book.listPrice <= filterBy.listPrice)
+            }
+            return books
+        })
+
 }
 
 
@@ -38,6 +49,7 @@ function save(book) {
 
 
 function getDefaultFilter() {
+    return {title:'', listPrice: ''}
 
 }
 

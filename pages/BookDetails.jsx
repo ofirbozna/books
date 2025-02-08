@@ -1,6 +1,7 @@
 import { bookService } from "../services/book.service.js"
 
 const { useState, useEffect } = React
+
 export function BookDetails({ onSetSelectedBookId, selectedBookId }) {
 
 const [book ,setBook] = useState(null)
