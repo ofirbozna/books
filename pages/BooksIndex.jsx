@@ -25,7 +25,7 @@ export function BookIndex() {
 
     function onRemoveBook(bookId) {
         bookService.remove(bookId)
-            .then(prevBoooks => prevBoooks.filter(book => book.id !== bookId))
+            .then(()=> setBooks(prevBoooks => prevBoooks.filter(book => book.id !== bookId)))
     }
 
     function onSetSelectedBookId(bookId) {
