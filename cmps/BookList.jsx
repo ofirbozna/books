@@ -6,7 +6,7 @@ export function BookList({ books, onRemoveBook, onSetSelectedBookId }) {
         <section>
             <ul className='book-list'>
                 {books.map(book =>
-                    <li key={book.id}>
+                    <li className="book-card" key={book.id}>
                         <BookPreview book={book}/>
                         <section>
                             <button onClick={()=>onRemoveBook(book.id)}>Delete</button>

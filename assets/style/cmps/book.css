@@ -1,0 +1,26 @@
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    gap: 1rem;
+    color: var(--gray1);
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: var(--clr1);
+    padding: 1rem;
+    border-radius: 5px;
+
+}
+
+.book-card h3 {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+   min-height: 3rem;
+}
+
+.book-card h4{
+    font-family:Arial, Helvetica, sans-serif;
+}
