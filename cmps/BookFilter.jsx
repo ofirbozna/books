@@ -5,7 +5,6 @@ export function BookFilter({ filterBy, onSetFilterBy }) {
 
     const [filterByToEdit, setFiltetByToEdit] = useState({ ...filterBy })
 
-
     useEffect(() => {
         onSetFilterBy(filterByToEdit)
     }, [filterByToEdit])
@@ -33,7 +32,18 @@ export function BookFilter({ filterBy, onSetFilterBy }) {
                 <label htmlFor="price">Price limit:</label>
                 <input name="listPrice" onChange={onHandleChange} value={filterByToEdit.listPrice || ''} type="number" id="price" />
 
-                
+                <label htmlFor="published">Publish year</label>
+                <input name='publishedDate' type="number" onChange={onHandleChange} value={filterByToEdit.publishedDate|| ''} id="publishedDate"/>
+
+                <label htmlFor="category">Category</label>
+                <select name="category" id="category" onChange={onHandleChange}>
+                    <option value="">choose category</option>
+                    <option value="Love">Love</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Poetry">Poetry</option>
+                    <option value="Computers">Computers</option>
+                    <option value="Religion">Religion</option>
+                </select>
                 <button>Submit</button>
 
 

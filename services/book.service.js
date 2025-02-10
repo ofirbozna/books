@@ -16,6 +16,7 @@ export const bookService = {
 }
 
 function query(filterBy = {}) {
+    console.log(filterBy)
     return storageService.query(BOOK_KEY)
         .then(books => {
             if (filterBy.title) {
@@ -23,7 +24,14 @@ function query(filterBy = {}) {
                 books = books.filter(book => regExp.test(book.title))
             }
             if (filterBy.listPrice) {
-                books = books.filter(book => book.listPrice <= filterBy.listPrice)
+                books = books.filter(book => book.listPrice.amount <= filterBy.listPrice)
+            }
+            if(filterBy.publishedDate){
+                books = books.filter(book => book.publishedDate >= filterBy.publishedDate)
+            }
+
+            if(filterBy.category){
+                books = books.filter(book => book.categories.includes(filterBy.category))
             }
             return books
         })

@@ -1,4 +1,5 @@
 .book-filter{
+    max-width: 400px;
     background-color: var(--clr2);
     padding: 0.8rem;
     border-radius: 5px;
@@ -6,6 +7,8 @@
 
 .book-filter form{
     display: grid;
-    grid-template-columns: 100px 200px;
+
+    grid-template-columns: minmax(50px, 100px) minmax(100px, auto);
     gap: .5em;
+    max-width: 100%;
 }
