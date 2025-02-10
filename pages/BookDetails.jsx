@@ -1,4 +1,5 @@
 import { bookService } from "../services/book.service.js"
+import { LongText } from "../cmps/LongText.jsx"
 
 const { useState, useEffect } = React
 
@@ -48,6 +49,8 @@ export function BookDetails({ onSetSelectedBookId, selectedBookId }) {
             <h1>Published: {setPublishYear()}</h1>
             <h1 className="sale">{showSale()}</h1>
             <button onClick={() => onSetSelectedBookId(null)}>back</button>
+                <LongText txt={book.description}/>
+
         </section>
     )
 

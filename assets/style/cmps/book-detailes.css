@@ -1,0 +1,17 @@
+/* .description{
+    display: inline;
+} */
+.description p{
+    display: inline;
+}
+
+.read-more-btn{
+    display: inline;
+    background-color: transparent;
+    color: rgb(5, 16, 213);
+}
+
+.read-more-btn:hover{
+    background-color: transparent;
+    color: rgb(0, 153, 255);
+}
