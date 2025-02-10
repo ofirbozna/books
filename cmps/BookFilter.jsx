@@ -32,7 +32,11 @@ export function BookFilter({ filterBy, onSetFilterBy }) {
 
                 <label htmlFor="price">Price limit:</label>
                 <input name="listPrice" onChange={onHandleChange} value={filterByToEdit.listPrice || ''} type="number" id="price" />
+
+                
                 <button>Submit</button>
+
+
             </form>
 
         </section>
